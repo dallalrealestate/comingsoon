@@ -307,10 +307,11 @@
         .lang-ar { display: none; }
         body[dir="rtl"] .lang-en { display: none; }
         body[dir="rtl"] .lang-ar { display: block; }
-        span.lang-en { display: inline; }
-        span.lang-ar { display: none; }
-        body[dir="rtl"] span.lang-en { display: none; }
-        body[dir="rtl"] span.lang-ar { display: inline; }
+        
+        .tagline span.lang-en { display: inline; }
+        .tagline span.lang-ar { display: none; }
+        body[dir="rtl"] .tagline span.lang-en { display: none; }
+        body[dir="rtl"] .tagline span.lang-ar { display: inline; }
 
         @keyframes fadeUp {
             from { opacity:0; transform:translateY(22px); }
