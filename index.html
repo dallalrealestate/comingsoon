@@ -352,7 +352,13 @@
             .phone-main  { width: 190px; left: 0; top: 0; }
             .phone-second { width: 140px; right: 0; bottom: 0; }
 
-            .tagline { display: none; }
+            .tagline {
+                font-size: 12px;
+                color: rgba(255,255,255,0.3);
+                font-style: italic;
+                letter-spacing: 0.5px;
+                animation: fadeUp 0.8s ease 0.6s both;
+            }
 
             /* ── WHITE FORM CARD fills rest of screen ── */
             .form-wrap {
@@ -435,7 +441,7 @@
 
             <h1>
                 <span class="lang-en">Coming Soon.</span>
-                <span class="lang-ar">.قريباً</span>
+                <span class="lang-ar">قريباً.</span>
             </h1>
 
             <p class="subtitle">
@@ -449,7 +455,7 @@
                         <span class="lang-en">Email Address *</span>
                         <span class="lang-ar">البريد الإلكتروني *</span>
                     </label>
-                    <input type="email" id="email" placeholder="your@email.com" required autocomplete="email">
+                    <input type="email" id="email" placeholder="your@gmail.com" required autocomplete="email">
                 </div>
 
                 <div class="or-divider">
