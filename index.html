@@ -174,8 +174,7 @@
             animation: fadeUp 0.8s ease 0.2s both;
         }
 
-        .form-logo { margin-bottom: 20px; }
-        .form-logo img { height: 32px; display: block; max-width: 100%; }
+        .form-logo { display: none; }
 
         h1 {
             font-family: 'Akzid', 'DM Serif Display', serif;
@@ -184,8 +183,9 @@
             color: var(--black);
             line-height: 1.05;
             margin-bottom: 10px;
+            text-align: center;
         }
-        body[dir="rtl"] h1 { font-family: 'Alexandria', 'Tajawal', serif; font-size: 36px; font-weight: 500; }
+        body[dir="rtl"] h1 { font-family: 'Alexandria', 'Tajawal', serif; font-size: 36px; font-weight: 500; text-align: center; }
 
         .subtitle {
             font-size: 14px;
@@ -193,6 +193,7 @@
             line-height: 1.7;
             margin-bottom: 28px;
             font-weight: 300;
+            text-align: center;
         }
 
         .input-group { margin-bottom: 14px; }
@@ -617,7 +618,7 @@
         second.classList.add('swapping');
         setTimeout(() => {
             document.getElementById('phoneMainImg').src   = goArabic ? 'arabic_phone.png'  : 'english_phone.png';
-            document.getElementById('phoneSecondImg').src = goArabic ? 'arabic_intro.png'  : 'english_intro.png';
+            document.getElementById('phoneSecondImg').src = goArabic ? 'arabic_intro.png'  : 'En_white.png';
             main.classList.remove('swapping');
             second.classList.remove('swapping');
         }, 350);
@@ -638,7 +639,7 @@
             document.getElementById('email').placeholder = 'بريدك@الإلكتروني.com';
             document.getElementById('phone').placeholder = '٠٠٠٠ ٠٠٠٠';
             document.getElementById('phoneMainImg').src   = 'arabic_phone.png';
-            document.getElementById('phoneSecondImg').src = 'arabic_intro.png';
+            document.getElementById('phoneSecondImg').src = 'Ar_white.png';
         }
     });
 </script>
