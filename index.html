@@ -562,6 +562,23 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
             </p>
 
             <form id="waitlistForm">
+                <div style="display:flex; gap:10px;">
+                    <div class="input-group" style="flex:1; margin-bottom:14px;">
+                        <label>
+                            <span class="lang-en">First Name *</span>
+                            <span class="lang-ar">الاسم الأول *</span>
+                        </label>
+                        <input type="text" id="firstName" placeholder="John" required autocomplete="given-name">
+                    </div>
+                    <div class="input-group" style="flex:1; margin-bottom:14px;">
+                        <label>
+                            <span class="lang-en">Last Name *</span>
+                            <span class="lang-ar">اسم العائلة *</span>
+                        </label>
+                        <input type="text" id="lastName" placeholder="Doe" required autocomplete="family-name">
+                    </div>
+                </div>
+
                 <div class="input-group">
                     <label>
                         <span class="lang-en">Email Address *</span>
@@ -694,6 +711,8 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
         const phoneValue = phoneInput ? document.getElementById('countryCode').value + ' ' + phoneInput : null;
 
         const data = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
             email: document.getElementById('email').value,
             phone: phoneValue,
             timestamp: new Date().toISOString(),
