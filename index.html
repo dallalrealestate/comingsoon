@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -518,17 +518,17 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
 /></noscript>
 </head>
-<body dir="ltr">
+<body dir="rtl">
 <div class="wrapper">
 
     <!-- LEFT / TOP on mobile -->
     <div class="left">
         <div class="phone-scene">
             <div class="phone-main" id="phoneMain">
-                <img src="english_phone.png" alt="Dallal App" id="phoneMainImg">
+                <img src="arabic_phone.png" alt="Dallal App" id="phoneMainImg">
             </div>
             <div class="phone-second" id="phoneSecond">
-                <img src="En-white.png" alt="Dallal Intro" id="phoneSecondImg">
+                <img src="Ar-white.png" alt="Dallal Intro" id="phoneSecondImg">
             </div>
         </div>
 
@@ -584,7 +584,7 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
                         <span class="lang-en">Email Address *</span>
                         <span class="lang-ar">البريد الإلكتروني *</span>
                     </label>
-                    <input type="email" id="email" placeholder="your@email.com" required autocomplete="email">
+                    <input type="email" id="email" placeholder="بريدك@الإلكتروني.com" required autocomplete="email">
                 </div>
 
                 <div class="or-divider">
@@ -644,7 +644,7 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
                             <option value="+1">🇺🇸 +1</option>
                             <option value="+44">🇬🇧 +44</option>
                         </select>
-                        <input type="tel" id="phone" placeholder="0000 0000" autocomplete="tel">
+                        <input type="tel" id="phone" placeholder="٠٠٠٠ ٠٠٠٠" autocomplete="tel">
                     </div>
                     <p class="optional-note">
                         <span class="lang-en">Optional — For exclusive SMS updates</span>
@@ -757,14 +757,14 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
     }
 
     function toggleLanguage() {
-        const isLTR = document.body.getAttribute('dir') === 'ltr';
-        document.body.setAttribute('dir', isLTR ? 'rtl' : 'ltr');
-        document.documentElement.setAttribute('lang', isLTR ? 'ar' : 'en');
-        document.documentElement.setAttribute('dir', isLTR ? 'rtl' : 'ltr');
-        document.getElementById('email').placeholder = isLTR ? 'بريدك@الإلكتروني.com' : 'your@email.com';
-        document.getElementById('phone').placeholder = isLTR ? '٠٠٠٠ ٠٠٠٠' : '0000 0000';
-        swapPhones(isLTR);
-        localStorage.setItem('dallal-lang', isLTR ? 'ar' : 'en');
+        const isRTL = document.body.getAttribute('dir') === 'rtl';
+        document.body.setAttribute('dir', isRTL ? 'ltr' : 'rtl');
+        document.documentElement.setAttribute('lang', isRTL ? 'en' : 'ar');
+        document.documentElement.setAttribute('dir', isRTL ? 'ltr' : 'rtl');
+        document.getElementById('email').placeholder = isRTL ? 'your@email.com' : 'بريدك@الإلكتروني.com';
+        document.getElementById('phone').placeholder = isRTL ? '0000 0000' : '٠٠٠٠ ٠٠٠٠';
+        swapPhones(!isRTL);
+        localStorage.setItem('dallal-lang', isRTL ? 'en' : 'ar');
     }
 
     function swapPhones(goArabic) {
@@ -788,14 +788,14 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
     });
 
     window.addEventListener('DOMContentLoaded', function() {
-        if (localStorage.getItem('dallal-lang') === 'ar') {
-            document.body.setAttribute('dir', 'rtl');
-            document.documentElement.setAttribute('lang', 'ar');
-            document.documentElement.setAttribute('dir', 'rtl');
-            document.getElementById('email').placeholder = 'بريدك@الإلكتروني.com';
-            document.getElementById('phone').placeholder = '٠٠٠٠ ٠٠٠٠';
-            document.getElementById('phoneMainImg').src   = 'arabic_phone.png';
-            document.getElementById('phoneSecondImg').src = 'Ar-white.png';
+        if (localStorage.getItem('dallal-lang') === 'en') {
+            document.body.setAttribute('dir', 'ltr');
+            document.documentElement.setAttribute('lang', 'en');
+            document.documentElement.setAttribute('dir', 'ltr');
+            document.getElementById('email').placeholder = 'your@email.com';
+            document.getElementById('phone').placeholder = '0000 0000';
+            document.getElementById('phoneMainImg').src   = 'english_phone.png';
+            document.getElementById('phoneSecondImg').src = 'En-white.png';
         }
     });
 </script>
