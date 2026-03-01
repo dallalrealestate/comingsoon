@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -132,7 +132,7 @@
         .phone-second.swapping { opacity: 0; transform: translateY(12px) rotate(3deg) !important; }
 
         .tagline {
-            font-size: 16px;
+            font-size: 18px;
             color: rgba(255,255,255,0.9);
             font-weight: 500;
             font-style: italic;
@@ -267,90 +267,6 @@
         }
         body[dir="rtl"] .optional-note { text-align: right; }
 
-        /* ── CONSENT CHECKBOX ── */
-        .consent-group {
-            margin-top: 18px;
-            margin-bottom: 0;
-        }
-
-        .consent-label {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            cursor: pointer;
-            text-transform: none;
-            font-size: 12px;
-            font-weight: 400;
-            color: #555;
-            letter-spacing: 0;
-            line-height: 1.6;
-        }
-
-        .consent-label input[type="checkbox"] {
-            width: 18px;
-            min-width: 18px;
-            height: 18px;
-            padding: 0;
-            margin-top: 2px;
-            border: 1.5px solid #CCCCCC;
-            border-radius: 5px;
-            background: #FAFAFA;
-            cursor: pointer;
-            appearance: none;
-            -webkit-appearance: none;
-            position: relative;
-            transition: all 0.2s;
-            flex-shrink: 0;
-        }
-
-        .consent-label input[type="checkbox"]:checked {
-            background: var(--blue);
-            border-color: var(--blue);
-        }
-
-        .consent-label input[type="checkbox"]:checked::after {
-            content: '';
-            position: absolute;
-            left: 4px;
-            top: 1px;
-            width: 6px;
-            height: 10px;
-            border: 2px solid white;
-            border-top: none;
-            border-left: none;
-            transform: rotate(45deg);
-        }
-
-        .consent-label input[type="checkbox"]:focus {
-            box-shadow: 0 0 0 3px rgba(0,0,255,0.10);
-            outline: none;
-        }
-
-        /* Shake animation when trying to submit without consent */
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20%       { transform: translateX(-6px); }
-            40%       { transform: translateX(6px); }
-            60%       { transform: translateX(-4px); }
-            80%       { transform: translateX(4px); }
-        }
-        .consent-group.shake {
-            animation: shake 0.4s ease;
-        }
-        .consent-group.error .consent-label input[type="checkbox"] {
-            border-color: #EF4444;
-            box-shadow: 0 0 0 3px rgba(239,68,68,0.12);
-        }
-        .consent-error-msg {
-            display: none;
-            font-size: 11px;
-            color: #EF4444;
-            margin-top: 6px;
-            margin-left: 28px;
-        }
-        body[dir="rtl"] .consent-error-msg { margin-left: 0; margin-right: 28px; text-align: right; }
-        .consent-group.error .consent-error-msg { display: block; }
-
         .submit-btn {
             width: 100% !important;
             padding: 15px !important;
@@ -446,8 +362,9 @@
             .phone-main  { width: 190px; left: 0; top: 0; }
             .phone-second { width: 140px; right: 0; bottom: 0; }
 
+            /* Keep tagline visible and nice on mobile */
             .tagline {
-               font-size: 16px;
+                font-size: 16px;
                 margin-top: 12px;
                 display: block !important;
             }
@@ -502,33 +419,18 @@
             .right { padding: 24px 18px 28px; }
         }
     </style>
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '25796298886679775');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
-/></noscript>
 </head>
-<body dir="ltr">
+<body dir="rtl">
 <div class="wrapper">
 
     <!-- LEFT / TOP on mobile -->
     <div class="left">
         <div class="phone-scene">
             <div class="phone-main" id="phoneMain">
-                <img src="english_phone.png" alt="Dallal App" id="phoneMainImg">
+                <img src="arabic_phone.png" alt="Dallal App" id="phoneMainImg">
             </div>
             <div class="phone-second" id="phoneSecond">
-                <img src="En-white.png" alt="Dallal Intro" id="phoneSecondImg">
+                <img src="arabic_intro.png" alt="Dallal Intro" id="phoneSecondImg">
             </div>
         </div>
 
@@ -552,7 +454,7 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
             </div>
 
             <h1>
-                <span class="lang-en">Coming Soon.</span>
+                <span class="lang-en">Coming Soon</span>
                 <span class="lang-ar">قريباً</span>
             </h1>
 
@@ -562,23 +464,6 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
             </p>
 
             <form id="waitlistForm">
-                <div style="display:flex; gap:10px;">
-                    <div class="input-group" style="flex:1; margin-bottom:14px;">
-                        <label>
-                            <span class="lang-en">First Name *</span>
-                            <span class="lang-ar">الاسم الأول *</span>
-                        </label>
-                        <input type="text" id="firstName" placeholder="John" required autocomplete="given-name">
-                    </div>
-                    <div class="input-group" style="flex:1; margin-bottom:14px;">
-                        <label>
-                            <span class="lang-en">Last Name *</span>
-                            <span class="lang-ar">اسم العائلة *</span>
-                        </label>
-                        <input type="text" id="lastName" placeholder="Doe" required autocomplete="family-name">
-                    </div>
-                </div>
-
                 <div class="input-group">
                     <label>
                         <span class="lang-en">Email Address *</span>
@@ -652,21 +537,6 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
                     </p>
                 </div>
 
-                <!-- ── CONSENT CHECKBOX ── -->
-                <div class="consent-group" id="consentGroup">
-                    <label class="consent-label">
-                        <input type="checkbox" id="consentCheck">
-                        <span>
-                            <span class="lang-en">I agree to receive promotional emails and notifications from Dallal.</span>
-                            <span class="lang-ar">أوافق على تلقي رسائل بريد إلكتروني ترويجية وإشعارات من دلال.</span>
-                        </span>
-                    </label>
-                    <p class="consent-error-msg">
-                        <span class="lang-en">Please agree to continue.</span>
-                        <span class="lang-ar">يرجى الموافقة للمتابعة.</span>
-                    </p>
-                </div>
-
                 <button type="submit" class="submit-btn">
                     <span class="lang-en">Join the Waitlist</span>
                     <span class="lang-ar">انضم إلى قائمة الانتظار</span>
@@ -687,21 +557,10 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
 </div>
 
 <script>
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxyEmWhf_6-6DvVsoN0Y-eCX6EjYFedkaMdo-X-mK5cphHjVXn6_j2P5LIO-5AzUDPF/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxW3I0DAyuToQ7V4Jj1aBN8JvUazrv73znjtOX4ZU06YbvgSjPE9Jk6uD74aPAWsaQ2/exec';
 
     document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
         e.preventDefault();
-
-        // ── Consent validation ──
-        const consentGroup = document.getElementById('consentGroup');
-        const consentCheck = document.getElementById('consentCheck');
-        if (!consentCheck.checked) {
-            consentGroup.classList.add('error', 'shake');
-            setTimeout(() => consentGroup.classList.remove('shake'), 400);
-            return;
-        }
-        consentGroup.classList.remove('error');
-
         const btn = document.querySelector('.submit-btn');
         btn.style.opacity = '0.65';
         btn.disabled = true;
@@ -711,16 +570,13 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
         const phoneValue = phoneInput ? document.getElementById('countryCode').value + ' ' + phoneInput : null;
 
         const data = {
-            firstName: document.getElementById('firstName').value,
-            lastName: document.getElementById('lastName').value,
             email: document.getElementById('email').value,
             phone: phoneValue,
             timestamp: new Date().toISOString(),
             source: getSource(),
             userAgent: navigator.userAgent,
             referrer: document.referrer,
-            language: document.body.getAttribute('dir') === 'rtl' ? 'Arabic' : 'English',
-            consent: true
+            language: document.body.getAttribute('dir') === 'rtl' ? 'AR' : 'EN'
         };
 
         try {
@@ -734,13 +590,6 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
         } catch(err) {
             btn.style.opacity = '1';
             btn.disabled = false;
-        }
-    });
-
-    // Clear error state when user checks the box
-    document.getElementById('consentCheck').addEventListener('change', function() {
-        if (this.checked) {
-            document.getElementById('consentGroup').classList.remove('error');
         }
     });
 
@@ -774,7 +623,7 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
         second.classList.add('swapping');
         setTimeout(() => {
             document.getElementById('phoneMainImg').src   = goArabic ? 'arabic_phone.png'  : 'english_phone.png';
-            document.getElementById('phoneSecondImg').src = goArabic ? 'Ar-white.png'  : 'En-white.png';
+            document.getElementById('phoneSecondImg').src = goArabic ? 'arabic_intro.png'  : 'english_intro.png';
             main.classList.remove('swapping');
             second.classList.remove('swapping');
         }, 350);
@@ -788,14 +637,14 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
     });
 
     window.addEventListener('DOMContentLoaded', function() {
-        if (localStorage.getItem('dallal-lang') === 'ar') {
-            document.body.setAttribute('dir', 'rtl');
-            document.documentElement.setAttribute('lang', 'ar');
-            document.documentElement.setAttribute('dir', 'rtl');
-            document.getElementById('email').placeholder = 'بريدك@الإلكتروني.com';
-            document.getElementById('phone').placeholder = '٠٠٠٠ ٠٠٠٠';
-            document.getElementById('phoneMainImg').src   = 'arabic_phone.png';
-            document.getElementById('phoneSecondImg').src = 'Ar-white.png';
+        if (localStorage.getItem('dallal-lang') === 'en') {
+            document.body.setAttribute('dir', 'ltr');
+            document.documentElement.setAttribute('lang', 'en');
+            document.documentElement.setAttribute('dir', 'ltr');
+            document.getElementById('email').placeholder = 'your@email.com';
+            document.getElementById('phone').placeholder = '0000 0000';
+            document.getElementById('phoneMainImg').src   = 'english_phone.png';
+            document.getElementById('phoneSecondImg').src = 'english_intro.png';
         }
     });
 </script>
