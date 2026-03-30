@@ -196,203 +196,6 @@
             text-align: center;
         }
 
-        .input-group { margin-bottom: 14px; }
-
-        label {
-            display: block;
-            font-size: 11px;
-            font-weight: 600;
-            color: #666;
-            margin-bottom: 6px;
-            letter-spacing: 0.4px;
-            text-transform: uppercase;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 13px 16px;
-            border: 1.5px solid #EAEAEA;
-            border-radius: 10px;
-            font-size: 14px;
-            font-family: inherit;
-            color: var(--black);
-            background: #FAFAFA;
-            transition: all 0.2s;
-            outline: none;
-        }
-        input:focus, select:focus {
-            border-color: var(--blue);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(0,0,255,0.07);
-        }
-        input::placeholder { color: #C0C0C0; }
-
-        .phone-row { display: flex; gap: 8px; }
-        .phone-row select {
-            flex: 0 0 118px;
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            padding-right: 28px;
-        }
-        .phone-row input { flex: 1; }
-
-        body[dir="rtl"] .phone-row { flex-direction: row-reverse; }
-        body[dir="rtl"] .phone-row select {
-            background-position: left 10px center;
-            padding-right: 13px; padding-left: 28px;
-        }
-        body[dir="rtl"] input,
-        body[dir="rtl"] select { text-align: right; }
-        body[dir="rtl"] label  { text-align: right; }
-
-        .or-divider {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 14px 0;
-            color: #CCC;
-            font-size: 12px;
-        }
-        .or-divider::before,
-        .or-divider::after { content:''; flex:1; height:1px; background:#EBEBEB; }
-
-        .optional-note {
-            font-size: 11px;
-            color: #C0C0C0;
-            margin-top: 5px;
-            font-style: italic;
-        }
-        body[dir="rtl"] .optional-note { text-align: right; }
-
-        /* ── CONSENT CHECKBOX ── */
-        .consent-group {
-            margin-top: 18px;
-            margin-bottom: 0;
-        }
-
-        .consent-label {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            cursor: pointer;
-            text-transform: none;
-            font-size: 12px;
-            font-weight: 400;
-            color: #555;
-            letter-spacing: 0;
-            line-height: 1.6;
-        }
-
-        .consent-label input[type="checkbox"] {
-            width: 18px;
-            min-width: 18px;
-            height: 18px;
-            padding: 0;
-            margin-top: 2px;
-            border: 1.5px solid #CCCCCC;
-            border-radius: 5px;
-            background: #FAFAFA;
-            cursor: pointer;
-            appearance: none;
-            -webkit-appearance: none;
-            position: relative;
-            transition: all 0.2s;
-            flex-shrink: 0;
-        }
-
-        .consent-label input[type="checkbox"]:checked {
-            background: var(--blue);
-            border-color: var(--blue);
-        }
-
-        .consent-label input[type="checkbox"]:checked::after {
-            content: '';
-            position: absolute;
-            left: 4px;
-            top: 1px;
-            width: 6px;
-            height: 10px;
-            border: 2px solid white;
-            border-top: none;
-            border-left: none;
-            transform: rotate(45deg);
-        }
-
-        .consent-label input[type="checkbox"]:focus {
-            box-shadow: 0 0 0 3px rgba(0,0,255,0.10);
-            outline: none;
-        }
-
-        /* Shake animation when trying to submit without consent */
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20%       { transform: translateX(-6px); }
-            40%       { transform: translateX(6px); }
-            60%       { transform: translateX(-4px); }
-            80%       { transform: translateX(4px); }
-        }
-        .consent-group.shake {
-            animation: shake 0.4s ease;
-        }
-        .consent-group.error .consent-label input[type="checkbox"] {
-            border-color: #EF4444;
-            box-shadow: 0 0 0 3px rgba(239,68,68,0.12);
-        }
-        .consent-error-msg {
-            display: none;
-            font-size: 11px;
-            color: #EF4444;
-            margin-top: 6px;
-            margin-left: 28px;
-        }
-        body[dir="rtl"] .consent-error-msg { margin-left: 0; margin-right: 28px; text-align: right; }
-        .consent-group.error .consent-error-msg { display: block; }
-
-        .submit-btn {
-            width: 100% !important;
-            padding: 15px !important;
-            background: var(--blue) !important;
-            color: white !important;
-            border: none !important;
-            border-radius: 11px !important;
-            font-size: 15px !important;
-            font-weight: 600 !important;
-            cursor: pointer !important;
-            font-family: inherit !important;
-            transition: all 0.25s !important;
-            margin-top: 20px !important;
-            display: block !important;
-        }
-        .submit-btn:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 10px 28px rgba(0,0,255,0.38) !important;
-        }
-        body[dir="rtl"] .submit-btn { letter-spacing: 0 !important; }
-
-        .form-note {
-            text-align: center;
-            font-size: 11px;
-            color: #CACACA;
-            margin-top: 12px;
-        }
-
-        .success-msg {
-            display: none;
-            background: #ECFDF5;
-            border: 1.5px solid #22C55E;
-            border-radius: 10px;
-            padding: 18px;
-            text-align: center;
-            color: #15803D;
-            font-size: 14px;
-            font-weight: 500;
-            margin-top: 16px;
-        }
-        .success-msg.show { display: block; animation: fadeUp 0.4s ease; }
-
         /* lang visibility */
         .lang-en { display: block; }
         .lang-ar { display: none; }
@@ -482,14 +285,6 @@
 
             .subtitle { margin-bottom: 22px; }
 
-            input, select { font-size: 16px; } /* prevents iOS zoom */
-
-            .submit-btn {
-                padding: 17px !important;
-                font-size: 16px !important;
-                margin-top: 16px !important;
-            }
-
             .badge { font-size: 11px; }
         }
 
@@ -561,197 +356,19 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
                 <span class="lang-ar">كن أول من يجرب دلال.<br>انضم إلى قائمة الانتظار وسنخبرك عند الإطلاق.</span>
             </p>
 
-            <form id="waitlistForm">
-                <div style="display:flex; gap:10px;">
-                    <div class="input-group" style="flex:1; margin-bottom:14px;">
-                        <label>
-                            <span class="lang-en">First Name *</span>
-                            <span class="lang-ar">الاسم الأول *</span>
-                        </label>
-                        <input type="text" id="firstName" placeholder="John" required autocomplete="given-name">
-                    </div>
-                    <div class="input-group" style="flex:1; margin-bottom:14px;">
-                        <label>
-                            <span class="lang-en">Last Name *</span>
-                            <span class="lang-ar">اسم العائلة *</span>
-                        </label>
-                        <input type="text" id="lastName" placeholder="Doe" required autocomplete="family-name">
-                    </div>
-                </div>
+            <!-- Metafik Lead Next Form -->
+            <script src="https://crm.dallal.com.kw/embed/form.js" data-form-id="3f0413b7-f2f8-43c8-a8c1-19304f170a75"></script>
 
-                <div class="input-group">
-                    <label>
-                        <span class="lang-en">Email Address *</span>
-                        <span class="lang-ar">البريد الإلكتروني *</span>
-                    </label>
-                    <input type="email" id="email" placeholder="بريدك@الإلكتروني.com" required autocomplete="email">
-                </div>
-
-                <div class="or-divider">
-                    <span class="lang-en">or</span>
-                    <span class="lang-ar">أو</span>
-                </div>
-
-                <div class="input-group">
-                    <label>
-                        <span class="lang-en">Phone Number</span>
-                        <span class="lang-ar">رقم الهاتف</span>
-                    </label>
-                    <div class="phone-row">
-                        <select id="countryCode">
-                            <option value="+965" selected>🇰🇼 +965</option>
-                            <option value="+966">🇸🇦 +966</option>
-                            <option value="+971">🇦🇪 +971</option>
-                            <option value="+974">🇶🇦 +974</option>
-                            <option value="+973">🇧🇭 +973</option>
-                            <option value="+968">🇴🇲 +968</option>
-                            <option value="+20">🇪🇬 +20</option>
-                            <option value="+962">🇯🇴 +962</option>
-                            <option value="+961">🇱🇧 +961</option>
-                            <option value="+91">🇮🇳 +91</option>
-                            <option value="+92">🇵🇰 +92</option>
-                            <option value="+880">🇧🇩 +880</option>
-                            <option value="+63">🇵🇭 +63</option>
-                            <option value="+60">🇲🇾 +60</option>
-                            <option value="+65">🇸🇬 +65</option>
-                            <option value="+86">🇨🇳 +86</option>
-                            <option value="+82">🇰🇷 +82</option>
-                            <option value="+81">🇯🇵 +81</option>
-                            <option value="+61">🇦🇺 +61</option>
-                            <option value="+64">🇳🇿 +64</option>
-                            <option value="+33">🇫🇷 +33</option>
-                            <option value="+49">🇩🇪 +49</option>
-                            <option value="+39">🇮🇹 +39</option>
-                            <option value="+34">🇪🇸 +34</option>
-                            <option value="+31">🇳🇱 +31</option>
-                            <option value="+46">🇸🇪 +46</option>
-                            <option value="+47">🇳🇴 +47</option>
-                            <option value="+45">🇩🇰 +45</option>
-                            <option value="+41">🇨🇭 +41</option>
-                            <option value="+43">🇦🇹 +43</option>
-                            <option value="+32">🇧🇪 +32</option>
-                            <option value="+351">🇵🇹 +351</option>
-                            <option value="+7">🇷🇺 +7</option>
-                            <option value="+90">🇹🇷 +90</option>
-                            <option value="+234">🇳🇬 +234</option>
-                            <option value="+27">🇿🇦 +27</option>
-                            <option value="+254">🇰🇪 +254</option>
-                            <option value="+52">🇲🇽 +52</option>
-                            <option value="+55">🇧🇷 +55</option>
-                            <option value="+54">🇦🇷 +54</option>
-                            <option value="+56">🇨🇱 +56</option>
-                            <option value="+57">🇨🇴 +57</option>
-                            <option value="+1">🇺🇸 +1</option>
-                            <option value="+44">🇬🇧 +44</option>
-                        </select>
-                        <input type="tel" id="phone" placeholder="٠٠٠٠ ٠٠٠٠" autocomplete="tel">
-                    </div>
-                    <p class="optional-note">
-                        <span class="lang-en">Optional — For exclusive SMS updates</span>
-                        <span class="lang-ar">اختياري — للحصول على تحديثات حصرية</span>
-                    </p>
-                </div>
-
-                <!-- ── CONSENT CHECKBOX ── -->
-                <div class="consent-group" id="consentGroup">
-                    <label class="consent-label">
-                        <input type="checkbox" id="consentCheck">
-                        <span>
-                            <span class="lang-en">I agree to receive promotional emails and notifications from Dallal.</span>
-                            <span class="lang-ar">أوافق على تلقي رسائل بريد إلكتروني ترويجية وإشعارات من دلال.</span>
-                        </span>
-                    </label>
-                    <p class="consent-error-msg">
-                        <span class="lang-en">Please agree to continue.</span>
-                        <span class="lang-ar">يرجى الموافقة للمتابعة.</span>
-                    </p>
-                </div>
-
-                <button type="submit" class="submit-btn">
-                    <span class="lang-en">Join the Waitlist</span>
-                    <span class="lang-ar">انضم إلى قائمة الانتظار</span>
-                </button>
-            </form>
-
-            <div class="success-msg" id="successMsg">
-                <span class="lang-en">🎉 You're on the list! We'll be in touch soon.</span>
-                <span class="lang-ar">🎉 تم إضافتك إلى القائمة! سنتواصل معك قريباً.</span>
-            </div>
-
-            <p class="form-note">
-                <span class="lang-en">🔒 No spam. Unsubscribe anytime.</span>
-                <span class="lang-ar">🔒 لا رسائل مزعجة. إلغاء الاشتراك في أي وقت.</span>
-            </p>
         </div>
     </div>
 </div>
 
 <script>
-
-    document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        // ── Consent validation ──
-        const consentGroup = document.getElementById('consentGroup');
-        const consentCheck = document.getElementById('consentCheck');
-        if (!consentCheck.checked) {
-            consentGroup.classList.add('error', 'shake');
-            setTimeout(() => consentGroup.classList.remove('shake'), 400);
-            return;
-        }
-        consentGroup.classList.remove('error');
-
-        const btn = document.querySelector('.submit-btn');
-        btn.style.opacity = '0.65';
-        btn.disabled = true;
-
-        // Get phone value - clean it properly
-        const phoneInput = document.getElementById('phone').value.trim();
-        const phoneValue = phoneInput ? document.getElementById('countryCode').value + ' ' + phoneInput : null;
-
-        const data = {
-            firstName: document.getElementById('firstName').value,
-            lastName: document.getElementById('lastName').value,
-            email: document.getElementById('email').value,
-            phone: phoneValue,
-            timestamp: new Date().toISOString(),
-            source: getSource(),
-            userAgent: navigator.userAgent,
-            referrer: document.referrer,
-            language: document.body.getAttribute('dir') === 'rtl' ? 'Arabic' : 'English',
-            consent: true
-        };
-       document.getElementById('waitlistForm').style.display = 'none';
-       document.getElementById('successMsg').classList.add('show');
-        
-    });
-
-    // Clear error state when user checks the box
-    document.getElementById('consentCheck').addEventListener('change', function() {
-        if (this.checked) {
-            document.getElementById('consentGroup').classList.remove('error');
-        }
-    });
-
-    function getSource() {
-        const p = new URLSearchParams(window.location.search);
-        if (p.has('source')) return p.get('source');
-        if (p.has('utm_source')) return p.get('utm_source');
-        const r = document.referrer.toLowerCase();
-        if (r.includes('instagram')) return 'Instagram';
-        if (r.includes('facebook')) return 'Facebook';
-        if (r.includes('tiktok')) return 'TikTok';
-        if (r.includes('twitter') || r.includes('x.com')) return 'Twitter';
-        return 'Direct Link';
-    }
-
     function toggleLanguage() {
         const isRTL = document.body.getAttribute('dir') === 'rtl';
         document.body.setAttribute('dir', isRTL ? 'ltr' : 'rtl');
         document.documentElement.setAttribute('lang', isRTL ? 'en' : 'ar');
         document.documentElement.setAttribute('dir', isRTL ? 'ltr' : 'rtl');
-        document.getElementById('email').placeholder = isRTL ? 'your@email.com' : 'بريدك@الإلكتروني.com';
-        document.getElementById('phone').placeholder = isRTL ? '0000 0000' : '٠٠٠٠ ٠٠٠٠';
         swapPhones(!isRTL);
         localStorage.setItem('dallal-lang', isRTL ? 'en' : 'ar');
     }
@@ -769,26 +386,16 @@ src="https://www.facebook.com/tr?id=25796298886679775&ev=PageView&noscript=1"
         }, 350);
     }
 
-    document.getElementById('phone').addEventListener('input', function(e) {
-        let v = e.target.value.replace(/\D/g, '');
-        if (v.length > 4) v = v.slice(0,4) + ' ' + v.slice(4);
-        if (v.length > 9) v = v.slice(0,9) + ' ' + v.slice(9,13);
-        e.target.value = v;
-    });
-
     window.addEventListener('DOMContentLoaded', function() {
         if (localStorage.getItem('dallal-lang') === 'en') {
             document.body.setAttribute('dir', 'ltr');
             document.documentElement.setAttribute('lang', 'en');
             document.documentElement.setAttribute('dir', 'ltr');
-            document.getElementById('email').placeholder = 'your@email.com';
-            document.getElementById('phone').placeholder = '0000 0000';
             document.getElementById('phoneMainImg').src   = 'english_phone.png';
             document.getElementById('phoneSecondImg').src = 'En-white.png';
         }
     });
 </script>
-    <script src="https://crm.dallal.com.kw/embed/form.js" data-form-id="3f0413b7-f2f8-43c8-a8c1-19304f170a75"></script>
 
 </body>
 </html>
